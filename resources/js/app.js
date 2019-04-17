@@ -98,6 +98,20 @@ $(window).on('load', function () {
                     },
                 ]
             },
+            {path: '/attendances',
+                meta: {
+                    roles: ['superadministrator']
+                },
+                component: resolve => require(["./components/Attendance/index.vue"], resolve),
+                children: [
+                    {
+                        path: '',
+                        name: 'view-attendance',
+                        component: resolve => require(["./components/Attendance/view.vue"], resolve),
+                        meta: {can: ['read-attendances']}
+                    }
+                    ]
+            }
         ]
         const store = new Vuex.Store({
             state: {

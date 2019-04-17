@@ -3600,6 +3600,13 @@ __webpack_require__.r(__webpack_exports__);
           route: 'view-user',
           text: 'Users'
         }
+      }, {
+        type: 'menu-item',
+        can: 'read-attendances',
+        data: {
+          route: 'view-attendance',
+          text: 'Attendances'
+        }
       }],
       loading: false
     };
@@ -107340,13 +107347,13 @@ $(window).on('load', function () {
       path: '/',
       name: 'dashboard',
       component: function component(resolve) {
-        return __webpack_require__.e(/*! AMD require */ 3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e(/*! AMD require */ 4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/ExampleComponent */ "./resources/js/components/ExampleComponent.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
       }
     }, {
       path: '*',
       name: 'not_found',
       component: function component(resolve) {
-        return __webpack_require__.e(/*! AMD require */ 2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/Error/404 */ "./resources/js/components/Error/404.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e(/*! AMD require */ 3).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/Error/404 */ "./resources/js/components/Error/404.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
       }
     }];
     var asyncRoute = [{
@@ -107355,13 +107362,13 @@ $(window).on('load', function () {
         roles: ['superadministrator']
       },
       component: function component(resolve) {
-        return __webpack_require__.e(/*! AMD require */ 7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/index.vue */ "./resources/js/components/user/index.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+        return __webpack_require__.e(/*! AMD require */ 9).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/index.vue */ "./resources/js/components/user/index.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
       },
       children: [{
         path: '',
         name: 'view-user',
         component: function component(resolve) {
-          return __webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/view.vue */ "./resources/js/components/user/view.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+          return __webpack_require__.e(/*! AMD require */ 1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/view.vue */ "./resources/js/components/user/view.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
         },
         meta: {
           can: ['read-users']
@@ -107370,7 +107377,7 @@ $(window).on('load', function () {
         path: 'create',
         name: 'create-user',
         component: function component(resolve) {
-          return __webpack_require__.e(/*! AMD require */ 5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/create.vue */ "./resources/js/components/user/create.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+          return __webpack_require__.e(/*! AMD require */ 6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/create.vue */ "./resources/js/components/user/create.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
         },
         meta: {
           can: ['create-users']
@@ -107378,7 +107385,7 @@ $(window).on('load', function () {
       }, {
         path: 'edit/:id',
         component: function component(resolve) {
-          return __webpack_require__.e(/*! AMD require */ 4).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/config.vue */ "./resources/js/components/user/config.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+          return __webpack_require__.e(/*! AMD require */ 5).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/config.vue */ "./resources/js/components/user/config.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
         },
         meta: {
           can: ['update-users']
@@ -107387,15 +107394,33 @@ $(window).on('load', function () {
           path: '',
           name: 'edit-user',
           component: function component(resolve) {
-            return __webpack_require__.e(/*! AMD require */ 6).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/edit/index.vue */ "./resources/js/components/user/edit/index.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+            return __webpack_require__.e(/*! AMD require */ 7).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/edit/index.vue */ "./resources/js/components/user/edit/index.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
           }
         }, {
           path: 'attendances',
           name: 'attendance-user',
           component: function component(resolve) {
-            return __webpack_require__.e(/*! AMD require */ 1).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/edit/attendance.vue */ "./resources/js/components/user/edit/attendance.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+            return __webpack_require__.e(/*! AMD require */ 2).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/user/edit/attendance.vue */ "./resources/js/components/user/edit/attendance.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
           }
         }]
+      }]
+    }, {
+      path: '/attendances',
+      meta: {
+        roles: ['superadministrator']
+      },
+      component: function component(resolve) {
+        return __webpack_require__.e(/*! AMD require */ 8).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/Attendance/index.vue */ "./resources/js/components/Attendance/index.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+      },
+      children: [{
+        path: '',
+        name: 'view-attendance',
+        component: function component(resolve) {
+          return __webpack_require__.e(/*! AMD require */ 0).then(function() { var __WEBPACK_AMD_REQUIRE_ARRAY__ = [__webpack_require__(/*! ./components/Attendance/view.vue */ "./resources/js/components/Attendance/view.vue")]; (resolve).apply(null, __WEBPACK_AMD_REQUIRE_ARRAY__);}.bind(this)).catch(__webpack_require__.oe);
+        },
+        meta: {
+          can: ['read-attendances']
+        }
       }]
     }];
     var store = new vuex__WEBPACK_IMPORTED_MODULE_3__["default"].Store({

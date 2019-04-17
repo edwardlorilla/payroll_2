@@ -64,13 +64,13 @@
                 var vm = this,
                     index = 0,
                     days = {}
-                if(vm.user.attendances.length){
+
                     while (index < vm.no_of_days.getDate()) {
                         days[index + 1] = false
                         index++
                     }
                     index = 0
-
+                if(vm.user.attendances ? vm.user.attendances.length : false){
                     while (index < vm.user.attendances.length) {
                         var d = new Date(vm.user.attendances[index].started_at.split(" ")[0]).addDays(1)
                         if (d.getDate()) {
@@ -110,7 +110,7 @@
                 const sums = [], vm = this;
                 columns.forEach((column, index) => {
                     if (index === 0) {
-                        sums[index] = `Total Cost: $${vm.user.total_timing}`;
+                        sums[index] = `Total Cost: $${vm.user.employee_pay}`;
                         return;
                     }
                     if(index === 2){

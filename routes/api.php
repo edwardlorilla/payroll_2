@@ -19,7 +19,9 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::middleware('auth:api')->group(function () {
     Route::get('/users/create', 'UserController@create');
     Route::get('/user/{user}/attendances', 'UserController@attendances');
+    Route::apiResource('/attendances', 'AttendanceController')->only('index');
     Route::apiResources([
         '/users' => 'UserController',
+
     ]);
 });

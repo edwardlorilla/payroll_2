@@ -98,7 +98,14 @@
                             route: 'view-user',
                             text: 'Users'
                         }
-                    }
+                    },{
+                        type: 'menu-item',
+                        can: 'read-attendances',
+                        data: {
+                            route: 'view-attendance',
+                            text: 'Attendances'
+                        }
+                    },
                 ],
                 loading: false
             }

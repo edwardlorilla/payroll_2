@@ -14,7 +14,7 @@
                     v-for="(column, index, key) in columns"
                     :key="`${index}-${key}-${column.prop}-${column.label}`"
                     :sortable="column.sort ? true : false"
-
+                    width="30px"
                     :label="column.label"
                     :prop="column.prop">
             </el-table-column>

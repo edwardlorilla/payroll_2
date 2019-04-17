@@ -28,6 +28,7 @@ class UserController extends Controller
             'name' => 'required|string|max:255',
             'email' => 'required|string|email|max:255|unique:users,email,' . $request->id,
             'password' => 'string|min:6',
+            'job_id' => 'required',
             'confirm_password' => 'same:password',
             'roles' => '',
         ]);
@@ -67,9 +68,9 @@ class UserController extends Controller
         $attendanceFunction = function ($query) use ($currentMonth){
             $query->whereMonth('started_at', $currentMonth);
         };
-        $attendance = User::whereId($user->id)->with(['attendances' => $attendanceFunction])->whereHas('attendances', $attendanceFunction)->first()->makeHidden(['job', 'can', 'employee_pay', 'job_id', 'roles']);
+        $attendance = User::whereId($user->id)->with(['attendances' => $attendanceFunction])->whereHas('attendances', $attendanceFunction)->first();
 
-        return response()->json($attendance);
+        return response()->json($attendance ? $attendance->makeHidden([ 'can', 'job_id', 'roles']) : []);
     }
     public function edit(User $user)
     {
